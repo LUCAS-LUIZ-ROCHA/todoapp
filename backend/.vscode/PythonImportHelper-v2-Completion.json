@@ -1,5 +1,37 @@
 [
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "importPath": "decouple",
+        "description": "decouple",
+        "isExtraImport": true,
+        "detail": "decouple",
+        "documentation": {}
+    },
+    {
+        "label": "AnyHttpUrl",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseSettings",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
         "label": "FastAPI",
         "importPath": "fastapi",
         "description": "fastapi",
@@ -8,11 +40,47 @@
         "documentation": {}
     },
     {
+        "label": "Settings",
+        "kind": 6,
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "peekOfCode": "class Settings(BaseSettings):\n    API_V1_STR: str = '/api/v1'\n    JWT_SECRET_KEY: str = config('JWT_SECRET_KEY', cast=str)\n    JWT_REFRESH_SECRET_KEY: str = config('JWT_REFRESH_SECRET_KEY', cast=str)\n    ALGORITHM = 'HS256'\n    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60   # Token de acesso expira em 1h\n    REFRESH_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7   # Equilave a 7 dias\n    BACKEND_CORS_ORIGIN: List[AnyHttpUrl] = []\n    PROJECT_NAME: str = 'TODOFast'\n    # Database",
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "kind": 6,
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "peekOfCode": "class Config:\n    case_sensitive = True\nsettings = Settings()",
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "kind": 5,
+        "importPath": "app.core.config",
+        "description": "app.core.config",
+        "peekOfCode": "settings = Settings()",
+        "detail": "app.core.config",
+        "documentation": {}
+    },
+    {
         "label": "ola",
         "kind": 2,
         "importPath": "app.app",
         "description": "app.app",
-        "peekOfCode": "def ola():\n    return {'message':\"Olá mundo!\"}",
+        "peekOfCode": "def ola():\n    return {'message': 'Olá mundo!'}",
+        "detail": "app.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app.app",
+        "description": "app.app",
+        "peekOfCode": "app = FastAPI()\n@app.get('/')\ndef ola():\n    return {'message': 'Olá mundo!'}",
         "detail": "app.app",
         "documentation": {}
     }
