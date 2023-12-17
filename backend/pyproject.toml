@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["LUCAS-LUIZ-ROCHA <lucasluiz_ads@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.105.0"
+uvicorn = "^0.24.0.post1"
+pymongo = "^4.6.1"
+
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.12.2"
+blue = "^0.9.1"
+ruff = "^0.1.8"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.taskipy.tasks]
+lint = 'ruff . && blue --check . --diff'
+format = 'blue .  && isort .'
+run = 'uvicorn app.app:app --reload'
+
+
+[tool.ruff]
+line-length = 79
+exclude = ['.venv', 'migrations']
+
+
+[tool.isort]
+profile = "black"
+line_length = 79
+extend_skip = ['migrations']
+
+[tool.blue]
+extend-exclude = '(migrations/)'

@@ -1,0 +1,19 @@
+[
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "ola",
+        "kind": 2,
+        "importPath": "app.app",
+        "description": "app.app",
+        "peekOfCode": "def ola():\n    return {'message':\"Olá mundo!\"}",
+        "detail": "app.app",
+        "documentation": {}
+    }
+]
